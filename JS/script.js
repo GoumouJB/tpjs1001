@@ -1,5 +1,6 @@
 // Sélectionner la boîte
 const box = document.getElementById('box');
+const boxText = document.getElementById('boxText');
 let moved = false;  // Variable pour suivre l'état du déplacement
 
 // Événement : Au clic, déplacer la boîte de 500px vers la droite ou revenir à la position initiale
@@ -7,9 +8,13 @@ box.addEventListener('click', () => {
     if (!moved) {
         // Si la boîte n'a pas encore été déplacée, on la déplace de 500px vers la droite
         gsap.to(box, { x: 500, duration: 1 });
+         // Faire disparaître le texte (fade out)
+        gsap.to(boxText, { opacity: 0, duration: 1 });
     } else {
         // Si elle a été déplacée, on la ramène à la position initiale
         gsap.to(box, { x: 0, duration: 1 });
+        // Faire réapparaître le texte (fade in)
+        gsap.to(boxText, { opacity: 1, duration: 1 });
     }
     moved = !moved;  // Inverser l'état du déplacement après chaque clic
 });

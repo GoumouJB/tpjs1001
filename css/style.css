@@ -13,3 +13,6 @@
     font-size: 25px;  /* Taille du texte */
     color: #333;  /* Couleur du texte */
 }
+#boxText {
+    opacity: 1;  /* Assurez-vous que le texte est visible au début */
+}
